@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+[x-cloak] { display: none !important; }
+
+@layer base {
+    body {
+        @apply bg-[#F5F6FA] text-gray-800;
+    }
+}
+
+/* Piezas reutilizables: así todas las pantallas se ven iguales */
+@layer components {
+    .card {
+        @apply bg-white border border-[#E8EBF2] rounded-2xl shadow-card;
+    }
+
+    /* Botones */
+    .btn {
+        @apply inline-flex items-center justify-center gap-2 min-h-[40px] px-4 rounded-[10px] text-sm font-semibold transition focus:outline-none focus:ring-2 focus:ring-brand-600 focus:ring-offset-2 disabled:opacity-50;
+    }
+    .btn-sm { @apply min-h-[34px] px-3; }
+    .btn-primary { @apply bg-brand-600 text-white hover:bg-brand-700; }
+    .btn-secondary { @apply bg-white text-brand-600 border border-brand-600 hover:bg-brand-50; }
+    .btn-danger { @apply bg-red-700 text-white hover:bg-red-800; }
+    .btn-success { @apply bg-green-700 text-white hover:bg-green-800; }
+
+    /* Campos de formulario */
+    .input-base {
+        @apply rounded-[10px] border-gray-300 text-sm shadow-sm focus:border-brand-600 focus:ring-brand-600;
+    }
+
+    /* Avisos */
+    .alert { @apply rounded-[10px] border text-sm p-4; }
+    .alert-success { @apply bg-green-50 border-green-200 text-green-800; }
+    .alert-error { @apply bg-red-50 border-red-200 text-red-700; }
+    .alert-warn { @apply bg-amber-50 border-amber-300 text-amber-800; }
+    .alert-info { @apply bg-brand-50 border-brand-200 text-brand-700; }
+
+    /* Etiquetas de estado */
+    .badge { @apply inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-semibold; }
+    .badge-green { @apply bg-green-100 text-green-800; }
+    .badge-amber { @apply bg-amber-100 text-amber-800; }
+    .badge-red { @apply bg-red-100 text-red-700; }
+    .badge-gray { @apply bg-gray-100 text-gray-600; }
+
+    /* Tablas */
+    .table-clean { @apply min-w-full text-sm; }
+    .table-clean thead { @apply bg-[#F1F3F8] text-left text-gray-600; }
+    .table-clean th { @apply px-4 py-2.5 text-[13px] font-semibold; }
+    .table-clean tbody { @apply divide-y divide-[#E8EBF2]; }
+
+    .link-danger { @apply font-medium text-red-700 hover:underline; }
+}
